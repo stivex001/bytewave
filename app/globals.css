@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./styles.css";
+
+.my-element {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  background-color: #e9f1ff; /* Adjust as needed */
+}
+
+.curved-top {
+  /* clip-path: ellipse(100% 70% at 50% 0%);  */
+  clip-path: ellipse(100% 78% at 50% 0%);
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
