@@ -3,11 +3,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "@/public/logo.png";
 import Link from "next/link";
 import { useHeader } from "@/contexts/HeaderContext";
 import { TbMenu2 } from "react-icons/tb";
+import { Popover } from "@headlessui/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
   { id: 1, name: "Home", href: "/" },
@@ -32,6 +34,8 @@ const Navbar = (props: Props) => {
     setActiveLink(id);
   };
 
+  const popoverRef = useRef<any>(null);
+
   useEffect(() => {
     if (refreshDropdown) {
       setTimeout(() => {
@@ -44,7 +48,7 @@ const Navbar = (props: Props) => {
     if (pathname.startsWith("/")) {
       return "bg-[#E9F1FF]";
     } else if (pathname.startsWith("/blog")) {
-      return "bg-white";
+      return "bg-red-500";
     } else {
       return "bg-white"; // Replace with the default color for other pages
     }
@@ -89,7 +93,70 @@ const Navbar = (props: Props) => {
           </div>
         </div>
         {/* links */}
-        <div className="hidden md:flex items-center gap-6 ">
+        <Popover className="lg:hidden" ref={popoverRef}>
+          {({ open }) => (
+            <>
+              <Popover.Button
+                className="relative z-10 my-4 inline-flex items-center rounded-lg text-[#272D4E] p-2  hover:stroke-purple-600 active:stroke-purple-600 [&:not(:focus-visible)]:focus-outline-none outline-none"
+                aria-label="Toggle site navigation"
+              >
+                {({ open }) =>
+                  open ? <TbMenu2 size={30} /> : <TbMenu2 size={30} />
+                }
+              </Popover.Button>
+              <AnimatePresence>
+                {open && (
+                  <>
+                    <Popover.Overlay
+                      static
+                      as={motion.div}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="fixed inset-0 bg-gray-300/60 z-0 backdrop:blur "
+                    />
+                    <Popover.Panel
+                      static
+                      as={motion.div}
+                      initial={{ opacity: 0, y: -32 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{
+                        opacity: 0,
+                        y: -32,
+                        transition: { duration: 0.2 },
+                      }}
+                      className="absolute w-[212px] p-[24px] top-[60px] right-[10px] z-[999] origin-top rounded-b-2xl bg-gray-50  shadow-2xl shadow-gray-900/20"
+                    >
+                      <div className="flex flex-col gap-[13px]">
+                        {links.map(({ id, name, href }, index) => (
+                          <section
+                            key={id}
+                            className={clsx(
+                              "block text-base leading-7 tracking-tight text-gray-700",
+                              index < links.length - 1 &&
+                                "border-b-2 border-black pb-3 "
+                            )}
+                          >
+                            <Popover.Button>
+                              <Link
+                                href={`${href}`}
+                                className="uppercase text-black text-xs font-bold leading-[15px] transition-all hover:text-purple-600 rounded-lg"
+                                onClick={() => popoverRef.current?.close()}
+                              >
+                                {name}
+                              </Link>
+                            </Popover.Button>
+                          </section>
+                        ))}
+                      </div>
+                    </Popover.Panel>
+                  </>
+                )}
+              </AnimatePresence>
+            </>
+          )}
+        </Popover>
+        <div className="hidden lg:flex items-center gap-6 ">
           {links.map((link) => (
             <Link
               href={link.href}
@@ -115,16 +182,15 @@ const Navbar = (props: Props) => {
                 >
                   {link.name}
                 </h1>
-                {/* <div
-                className={`absolute w-full bottom-0 h-1 transition-all ease-in-out duration-500 group-hover:bg-purple-600 ${
-                  activeLink === link.id && "bg-purple-600"
-                }`}
-              ></div> */}
+                <div
+                  className={`absolute w-full bottom-5 h-1 transition-all ease-in-out duration-500 group-hover:bg-purple-600 ${
+                    activeLink === link.id && "bg-purple-600"
+                  }`}
+                ></div>
               </div>
             </Link>
           ))}
         </div>
-        {nav && <TbMenu2 size={40} />}
       </nav>
     </header>
   );
