@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import herobg from "@/images/Group 39686.png";
-import bg from "@/public/herobg.png";
 import { nunito } from "@/app/fonts";
 import absImg from "@/images/cut.svg";
 import decoy from "@/images/Decore.png";
