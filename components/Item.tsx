@@ -1,11 +1,18 @@
 import React from "react";
 import { FaEnvelope, FaMapMarker, FaPhone } from "react-icons/fa";
 
-type ItemProps = {
-  Links: [any];
-  title: string;
-  icon: string;
+export interface Link  {
+  name: string;
+  link: string;
+  icon?: string;
 };
+
+type ItemProps = {
+  Links: Link[];
+  title: string;
+  icon?: string;
+};
+
 
 const Item = ({ Links, title, icon }: ItemProps) => {
   const iconStyle = { width: "20px", height: "20px" };

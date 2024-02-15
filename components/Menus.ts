@@ -1,3 +1,5 @@
+import { Link } from "./Item";
+
 export const PRODUCTS = [
   { name: "Features", link: "#" },
   { name: "Pricing", link: "#" },
@@ -5,7 +7,7 @@ export const PRODUCTS = [
   { name: "Reviews", link: "#" },
   { name: "Updates", link: "#" },
 ];
-export const COMPANY = [
+export const COMPANY: Link[] = [
   { name: "About", link: "#" },
   { name: "Contact Us", link: "#contact" },
   { name: "Help center", link: "#" },

@@ -8,8 +8,8 @@ import btn from "@/images/Group 77.png";
 const ItemsContainer = () => {
   return (
     <>
-      <div className="w-5/6 mx-auto flex flex-wrap justify-between  py-16">
-        <div className="flex flex-col  -mt-5 ">
+      <div className=" flex flex-wrap justify-between  py-16">
+        <div className="flex flex-col  -mt-6 ">
           <div className="-ml-4 mb-2 ">
             <Image src={Logo} alt="logo" className="" width={157} height={150}/>
           </div>

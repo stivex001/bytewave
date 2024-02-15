@@ -4,9 +4,8 @@ import "./globals.css";
 import { HeaderProvider } from "@/contexts/HeaderContext";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { public_sans} from "@/app/fonts"
-
-
+import { public_sans } from "@/app/fonts";
+import { SearchProvider } from "@/contexts/SearchContext";
 
 export const metadata: Metadata = {
   title: "Bytewave",
@@ -25,9 +24,11 @@ export default function RootLayout({
       </head>
       <body className={`root overflow-x-hidden ${public_sans.className} `}>
         <HeaderProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <SearchProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </SearchProvider>
         </HeaderProvider>
       </body>
     </html>

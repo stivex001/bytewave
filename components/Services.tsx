@@ -52,25 +52,25 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <section id="services" className="my-24 w-5/6 mx-auto ">
+    <section id="services" className="my-16 px-6 2xl:w-9/12 mx-auto ">
       <div className="flex flex-col text-center gap-2">
-        <p className="text-[#7854F7] font-semibold text-xl">Our Services</p>
-        <span className="text-[#272D4E] text-base font-medium">
+        <p className="text-[#7854F7] font-semibold text-2xl">Our Services</p>
+        <span className="text-[#272D4E] text-[17px] font-medium">
           We Provide Professional IT Solutions For Your Business
         </span>
       </div>
 
-      <div className="w-full grid grid-cols-1 lg:grid-cols-3  gap-y-20 my-24">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-10  gap-y-40 my-32">
         {serviceData.map((item) => (
           <div
             key={item?.id}
-            className="bg-white shadow-lg flex flex-col gap-10 justify-between items-center px-5 py-14 w-[346px]  rounded-md relative "
+            className="bg-white shadow-lg flex flex-col gap-10 justify-between items-center px-5 py-10   rounded-[16px] relative border border-gray-200"
           >
-            <Image src={item.img} alt="" width={100} height={100} className="-mt-16"/>
+            <Image src={item.img} alt="" width={120} height={120} className="-mt-24 "/>
             <p className="text-lg text-center font-semibold text-[#272D4E] max-w-[264px]  ">
               {item.title}
             </p>
-            <span className={` ${poppins.className} h-[132px] text-base text-[#696984] max-w-[289px]  text-center `}>{item.desc}</span>
+            <span className={` ${poppins.className} h-[132px] text-[14px] leading-6 text-[#696984] max-w-[289px]  text-center `}>{item.desc}</span>
           </div>
         ))}
       </div>

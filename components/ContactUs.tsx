@@ -76,26 +76,22 @@ const ContactUs = (props: Props) => {
   return (
     <section
       id="contact"
-      className="w-5/6 relative mx-auto my-20 bg-conect-section h-[50vh] bg-center bg-no-repeat bg-cover flex items-center justify-center"
+      className=" w-full  lg:w-5/6 relative mx-auto my-20 bg-conect-section h-[50vh] bg-center bg-no-repeat bg-cover flex items-center justify-center"
     >
-      
       <Image
         src={img2}
         alt=""
-        width={153}
-        height={160}
-        className="absolute bottom-0 right-6"
+        
+        className="absolute lg:bottom-0 bottom-10 right-6 lg:w-[153px] w-10 "
       />
       <Image
         src={img3}
         alt=""
-        width={70}
-        height={70}
-        className="absolute top-8 right-20"
+        className="absolute lg:top-9 top-16 right-0 lg:right-12 w-5 h-5 lg:w-16 lg:h-16"
       />
 
       <div className="flex flex-col gap-16 ">
-        <p className="text-[#000D2F] font-medium text-2xl max-w-[544px] text-center">
+        <p className="text-[#000D2F] font-medium text-sm lg:text-2xl lg:max-w-[544px] max-w-[300px] text-center">
           Do you have a next level idea ? or want to scale up existing products
         </p>
         <button

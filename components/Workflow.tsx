@@ -9,49 +9,49 @@ type Props = {};
 
 const Workflow = (props: Props) => {
   return (
-    <section className="my-16">
-      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row justify-center gap-20 ">
-        <div className="flex flex-col gap-16">
-          <p className="font-semibold text-[#7854f7] text-2xl">Our Workflow</p>
-          <div className="flex flex-col gap-5">
+    <section className="my-24">
+      <div className="max-w-[1100px] 2xl:max-w-[1300px] px-5 mx-auto flex flex-col lg:flex-row justify-center gap-20 ">
+        <div className="flex flex-col gap-[100px]">
+          <p className="font-semibold text-[#7854f7] text-2xl text-center lg:text-start">Our Workflow</p>
+          <div className="flex flex-col gap-5 px-5 lg:px-0">
             <div className="flex items-center gap-4">
-              <Image src={icon} alt="" width={30} height={30} />
-              <p className="font-medium text-base text-[#191A15]">
-                <span className="mr-5">IDEA;</span> We conceptualize innovative
+              <Image src={icon} alt="" className="md:w-7 md:h-7 w-5 h-5" />
+              <p className="font-medium text-sm md:text-base text-[#191A15] ">
+                <span className="md:mr-5 mr-3 text-sm">IDEA;</span> We conceptualize innovative
                 tech solutions.
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Image src={icon} alt="" width={30} height={30} />
-              <p className="font-medium text-base text-[#191A15]">
-                <span className="mr-5">RESEARCH;</span>We explore and validates
+              <Image src={icon} alt="" className="md:w-7 md:h-7 w-5 h-5" />
+              <p className="font-medium text-sm md:text-base text-[#191A15]">
+                <span className="md:mr-5 mr-3 text-sm">RESEARCH;</span>We explore and validates
                 possibilities
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Image src={icon} alt="" width={30} height={30} />
-              <p className="font-medium text-base text-[#191A15]">
-                <span className="mr-5">DEVELOPMENT;</span> We build solutions.
+              <Image src={icon} alt="" className="md:w-7 md:h-7 w-5 h-5" />
+              <p className="font-medium text-sm md:text-base text-[#191A15]">
+                <span className="md:mr-5 mr-3 text-sm">DEVELOPMENT;</span> We build solutions.
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Image src={icon} alt="" width={30} height={30} />
-              <p className="font-medium text-base text-[#191A15]">
-                <span className="mr-5">DEPLOYMENT;</span> We implement and
+              <Image src={icon} alt="" className="md:w-7 md:h-7 w-5 h-5" />
+              <p className="font-medium text-sm md:text-base text-[#191A15]">
+                <span className="md:mr-5 mr-3">DEPLOYMENT;</span> We implement and
                 launch solutions
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Image src={icon} alt="" width={30} height={30} />
-              <p className="font-medium text-base text-[#191A15]">
-                <span className="mr-5">OPTIMIZATION;</span> Continuous
+              <Image src={icon} alt="" className="md:w-7 md:h-7 w-5 h-5" />
+              <p className="font-medium text-sm md:text-base text-[#191A15]">
+                <span className="md:mr-5 mr-3 text-sm">OPTIMIZATION;</span> Continuous
                 improvement
               </p>
             </div>
           </div>
         </div>
-        <div className="relative">
-          <Image src={doings} alt="" width={585} height={505} />
+        <div className="relative w-11/12 mx-auto lg:w-1/2">
+          <Image src={doings} alt=""  className="w-full h-full" />
         </div>
       </div>
     </section>

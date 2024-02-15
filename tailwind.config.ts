@@ -18,6 +18,7 @@ const config: Config = {
         "conect-section": "url(/conect.png)",
         "hero": "url(/hero2.png)",
         "testimonies": "url(/testi.png)",
+        cta: "url(/cta.png)",
       },
       colors: {
         "purple-primary": "#903FDA",

@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
 //import ReactQuill from "react-quill";
@@ -32,10 +34,10 @@ export const QuillInterpreter = ({
 
   return (
     <div className="text-justify">
-      {truncate && truncateLength && text.length ? (
+      {truncate && truncateLength && typeof text === "string" && text.length ? (
         <p>{trim(text)}</p>
       ) : (
-        parse(text)
+        <p>{typeof text === "string" && parse(text)}</p>
       )}
     </div>
   );

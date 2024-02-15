@@ -15,20 +15,20 @@ const Portfolio = (props: Props) => {
       id="portfolio"
       className="my-20 px-5 lg:w-5/6 mx-auto flex flex-col gap-10"
     >
-      <div className="text-center">
+      <div className="text-center flex flex-col gap-2">
         <p className="text-[#7854f7] font-semibold text-xl">Portfolio</p>
         <span className="font-medium text-base text-[#272d4e]">
           See Some Of Our Works
         </span>
       </div>
 
-      <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-5 gap-y-6">
-        <Image src={img1} alt="" width={153} height={49} />
-        <Image src={img3} alt="" width={137} height={37} />
-        <Image src={img5} alt="" width={146} height={45} />
-        <Image src={img6} alt="" width={139} height={42} />
-        <Image src={img4} alt="" width={176} height={34} />
-        <Image src={img2} alt="" width={118} height={45} />
+      <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-10 gap-y-8 items-center mt-6">
+        <Image src={img1} alt="" className="w-16 md:w-[176px]" />
+        <Image src={img3} alt="" className="w-16 md:w-[176px]" />
+        <Image src={img5} alt="" className="w-16 md:w-[176px]" />
+        <Image src={img6} alt="" className="w-16 md:w-[176px] mt-3 lg:mt-5" />
+        <Image src={img4} alt="" className="w-16 md:w-[176px]" />
+        <Image src={img2} alt="" className="w-16 md:w-[150px] object-cover" />
       </div>
     </section>
   );
